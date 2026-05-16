@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SentinelGuard | AI Threat Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Maintaining your specific dark-mode colors */
+        .custom-dark { background-color: #0d1117; }
+        .custom-card { background-color: #161b22; border: 1px solid #30363d; }
+        .custom-input { background-color: #010409; border: 1px solid #30363d; color: #f0f6fc; }
+        .brand-red { color: #f85149; }
+    </style>
+    
+</head>
+<body class="custom-dark text-gray-300">
+
+    <div class="pb-6 sm:pb-8 lg:pb-12">
+        <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+            <header class="mb-8 flex items-center justify-between py-4 md:py-8">
+                <a href="/" class="inline-flex items-center gap-2.5 text-2xl font-bold brand-red md:text-3xl">
+                    🛡️ SentinelGuard
+                </a>
+                <nav class="hidden gap-12 lg:flex">
+                    <a href="#" class="text-lg font-semibold text-indigo-400">Dashboard</a>
+                    <a href="#" class="text-lg font-semibold text-gray-400 hover:text-indigo-400">Research</a>
+                    <a href="#" class="text-lg font-semibold text-gray-400 hover:text-indigo-400">Documentation</a>
+                </nav>
+                <span class="hidden rounded-lg bg-gray-800 px-4 py-2 text-sm font-semibold text-green-400 lg:inline-block">
+                    ● SYSTEM ACTIVE
+                </span>
+            </header>
+
+            <section class="flex flex-col items-center justify-center overflow-hidden rounded-lg custom-card shadow-lg py-12 md:py-20">
+                <div class="relative flex flex-col items-center p-4 sm:max-w-xl text-center">
+                    <p class="mb-2 text-indigo-300 font-semibold">Autonomous Defense System</p>
+                    <h1 class="mb-8 text-4xl font-bold text-white sm:text-5xl md:text-6xl">Intelligence Scan</h1>
+                    <p class="mb-2 text-indigo-300 font-semibold text-success">{{verdict}}</p>
+                    <form action="/" method="post" class="w-full">
+                        <div class="mb-4">
+                            <textarea 
+                                name="input_text" 
+                                class="w-full rounded-lg custom-input p-4 outline-none focus:ring-2 focus:ring-indigo-500" 
+                                rows="4" 
+                                placeholder="Paste link or suspicious message here..."></textarea>
+                        </div>
+                        <div class="flex flex-col gap-2.5 sm:flex-row sm:justify-center">
+                            <button type="submit" class="inline-block rounded-lg bg-indigo-600 px-8 py-3 text-center text-sm font-semibold text-white hover:bg-indigo-700 md:text-base">
+                                Run Intelligence Scan
+                            </button>
+                        </div>
+                    </form>
+
+                    {% if predict %}
+<div class="mt-6 p-6 w-full rounded-lg {{ bg }} border {{ border }} {{ text }}">
+    <div class="mb-4">
+        <h3 class="text-xs uppercase font-black tracking-widest opacity-70">Final Verdict</h3>
+        <p class="text-xl font-bold">{{ predict }}</p>
+    </div>
+    
+    <div class="pt-4 border-t border-white/10 text-sm italic opacity-80">
+        <strong>Agent Trace:</strong> {{ agent_info }}
+    </div>
+</div>
+{% endif %}
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="py-6 sm:py-8 lg:py-12">
+        <div class="mx-auto max-w-screen-lg px-4 md:px-8">
+            <div class="grid grid-cols-2 gap-6 rounded-lg bg-indigo-600 p-6 md:grid-cols-4 md:gap-8 md:p-8">
+                <div class="flex flex-col items-center">
+                    <div class="text-xl font-bold text-white sm:text-2xl md:text-3xl">99.2%</div>
+                    <div class="text-sm text-indigo-100">Accuracy</div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="text-xl font-bold text-white sm:text-2xl md:text-3xl">4</div>
+                    <div class="text-sm text-indigo-100">AI Agents</div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="text-xl font-bold text-white sm:text-2xl md:text-3xl">24/7</div>
+                    <div class="text-sm text-indigo-100">Monitoring</div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="text-xl font-bold text-white sm:text-2xl md:text-3xl">RAG</div>
+                    <div class="text-sm text-indigo-100">Architecture</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="pt-12">
+        <div class="mx-auto max-w-screen-2xl px-4 md:px-8 border-t border-gray-800 py-8 text-center text-sm text-gray-500">
+            © 2026 SentinelGuard | Ref: 23BCE9629 | VIT-AP University
+        </div>
+    </footer>
+
+</body>
+</html>
